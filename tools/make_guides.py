@@ -461,7 +461,242 @@ GUIDES = [
   "price": "$50-150",
   "fix": "I point your domain at the new site, remove the old records, make both www and the plain domain work securely, and keep your email running.",
  },
+ {
+  "slug": "business-not-showing-on-google-maps",
+  "title": "Business not showing on Google Maps? How to fix your Business Profile",
+  "h1": "Business not showing on Google Maps?",
+  "desc": "Your business doesn't appear on Google Maps or in local results? Check verification, profile details, categories and suspensions in your Google Business Profile. Step by step.",
+  "answer": "Usually the Business Profile isn't verified, is missing key details, or has been suspended. Fixing those gets you onto the map. Ranking higher among nearby competitors then comes down to a complete profile, reviews, and a website that works.",
+  "body": """
+<h2>1. Check the profile exists and is verified</h2>
+<p>Sign in to the Google account that manages the business and search for your business name. If Google asks you to verify, finish that first: unverified profiles often don't show on Maps. If you can't find a profile at all, create one at Google Business Profile.</p>
+
+<h2>2. Fill in every field</h2>
+<p>Use your real business name (no extra keywords), the right primary category, opening hours, phone number, website and photos. Service-area businesses such as plumbers can hide their street address and list the areas they serve instead.</p>
+
+<h2>3. Look for a suspension</h2>
+<p>If the profile shows as suspended, Google believes something breaks its guidelines: often a name stuffed with keywords, a virtual office address, or duplicate listings. Correct the cause, then submit the reinstatement request from the profile.</p>
+
+<h2>4. Make the website match</h2>
+<p>Your website should show the same business name, phone number and address as the profile. A broken website link is a common problem (see <a href="../google-maps-wrong-website-link/">wrong website on Google Maps</a>), and so is a site that doesn't load.</p>
+
+<h2>5. Ask happy customers for reviews</h2>
+<p>Recent, genuine reviews help you appear for nearby searches. Ask after a job well done and reply to every review, good or bad.</p>
+""",
+  "price": "$50-150",
+  "fix": "I check the profile against Google's guidelines, fix the details and website link, and make sure your website backs it up.",
+ },
+ {
+  "slug": "this-site-may-be-hacked-warning",
+  "title": "\"This site may be hacked\" or \"Dangerous site\" warning? How to remove it",
+  "h1": "Google shows \"This site may be hacked\" or Chrome says \"Dangerous site\"?",
+  "desc": "Google labels your website \"This site may be hacked\" or browsers show a red \"Dangerous site\" warning? How to confirm it, clean the site and ask Google to remove the warning.",
+  "answer": "Google adds these warnings when it finds hacked content, spam pages or malware on your site. Customers see them before they even reach you. The site has to be cleaned, then you ask Google to review it in Search Console, and the warning usually goes within days.",
+  "body": """
+<h2>1. See what Google found</h2>
+<p>Add the site to Google Search Console and open <b>Security issues</b>. It lists the problem type and example pages. Google's <a href="https://transparencyreport.google.com/safe-browsing/search" rel="noopener">Safe Browsing site status</a> page also shows whether your address is flagged.</p>
+
+<h2>2. Look for spam pages</h2>
+<p>Search Google for <code>site:yourbusiness.com</code>. Pages you never made (cheap pills, casinos, pages in other languages) are a sign of a hack that creates spam pages.</p>
+
+<h2>3. Clean the site</h2>
+<p>Back up first, change every password, update everything, and remove the malicious files and spam pages. On WordPress, follow the steps in the <a href="../wordpress-site-redirecting-to-spam/">hacked WordPress guide</a>. Restoring a clean backup from before the hack is often fastest.</p>
+
+<h2>4. Ask Google for a review</h2>
+<p>In <b>Security issues</b>, tick that you've fixed the problems and click <b>Request review</b>. Describe what you found and removed. Malware reviews are often done within a few days; spam reviews can take longer.</p>
+
+<h2>5. Remove leftover spam pages from Google</h2>
+<p>Make sure the spam addresses now return "not found", and use Search Console's <b>Removals</b> tool to hide them from results faster.</p>
+""",
+  "price": "a custom quote, usually $200-350",
+  "fix": "I clean the site, close the hole the attacker used, remove the spam pages, and handle the Google review for you.",
+ },
+ {
+  "slug": "squarespace-site-not-showing-on-google",
+  "title": "Squarespace site not showing on Google? How to get it listed",
+  "h1": "Squarespace site not showing on Google?",
+  "desc": "Your Squarespace website isn't on Google? Check that it isn't on trial, password-protected or hidden from search engines, then connect Google Search Console. Step by step.",
+  "answer": "Squarespace keeps sites out of search results while they're on a trial, password-protected, or set to be hidden from search engines. Once the site is public and paid, connect Google Search Console so Google finds it faster.",
+  "body": """
+<h2>1. Make sure the site is public</h2>
+<p>Sites on a free trial or behind a site-wide password can't be listed by Google. Check your site availability settings and make sure the site is public and on a paid plan.</p>
+
+<h2>2. Check the search engine setting</h2>
+<p>In your SEO settings, make sure <b>Hide site from search engines</b> is turned off. Then check the SEO tab of your important pages, which can also be hidden one by one.</p>
+
+<h2>3. Use your own domain</h2>
+<p>Connect your own domain so Google lists that, rather than the temporary squarespace.com address. If the domain shows "Website Expired", see the <a href="../squarespace-website-expired/">expired Squarespace guide</a>.</p>
+
+<h2>4. Connect Google Search Console</h2>
+<p>Squarespace can connect Search Console from its SEO or analytics settings. Then submit <code>yourbusiness.com/sitemap.xml</code> (Squarespace creates it automatically) and request indexing for your homepage.</p>
+
+<h2>5. Give each page a clear title and description</h2>
+<p>In each page's SEO settings, write a title that says what you do and where, and a one-sentence description. That's what people see in Google before they click.</p>
+""",
+  "price": "$100-150",
+  "fix": "I check visibility and SEO settings, connect Search Console, write clear titles and descriptions, and request indexing.",
+ },
+ {
+  "slug": "website-showing-hosting-default-page",
+  "title": "Website showing a hosting default page or \"Index of /\"? How to fix it",
+  "h1": "Your website shows a hosting company's default page or \"Index of /\"?",
+  "desc": "Visitors see \"Web Server's Default Page\", a hosting placeholder, \"Index of /\" or a parked page instead of your business website? Here's why and how to fix it.",
+  "answer": "That page means your domain reaches a server, but the server has no website set up for it, or the files are missing or in the wrong folder. It often happens after a hosting change, an account reset, or a plan that lapsed.",
+  "body": """
+<h2>1. Read what the page says</h2>
+<p>"Web Server's Default Page" or a hosting company's logo means the server has no site for your domain. "Index of /" means the folder exists but has no homepage file. A "parked" or "for sale" page usually means a domain problem: see the <a href="../domain-expired-website-down/">expired domain guide</a>.</p>
+
+<h2>2. Check where your domain points</h2>
+<p>If you recently moved hosts or builders, the domain may point to the wrong server. See the <a href="../domain-not-pointing-to-new-website/">DNS guide</a> to check your records.</p>
+
+<h2>3. Check the hosting account</h2>
+<p>Log in to your hosting panel. Is the plan active? Is your domain added to the account? Are your website files in the main web folder (often <code>public_html</code>)? If the folder is empty, the files may have been deleted or the account reset.</p>
+
+<h2>4. Restore the website</h2>
+<p>Most hosts keep backups for a limited time. Restore the most recent one from the backups section, or ask support. If there's no backup, the site has to be rebuilt.</p>
+
+<h2>5. Keep your own backup</h2>
+<p>Download a copy of your site every few months, or use a backup service, so the business never depends on one host's backups.</p>
+""",
+  "price": "$150-350",
+  "fix": "I find out why the server shows the placeholder, restore or rebuild the site, and set up backups so it can't happen again.",
+ },
+ {
+  "slug": "business-email-stopped-working",
+  "title": "Business email on your domain stopped working? How to fix it",
+  "h1": "Email on your business domain stopped working?",
+  "desc": "Emails to your business address bounce or never arrive? Check the domain, your email subscription and your MX records. How to find the cause and get email flowing again.",
+  "answer": "When email on your own domain stops, it's usually one of three things: the domain expired, the email subscription (Google Workspace, Microsoft 365 or your host's email) lapsed, or the domain's email records were changed during a website move.",
+  "body": """
+<h2>1. Check the domain hasn't expired</h2>
+<p>If the website is down too, look the domain up at <a href="https://lookup.icann.org" rel="noopener">lookup.icann.org</a>. An expired domain stops both. See the <a href="../domain-expired-website-down/">expired domain guide</a>.</p>
+
+<h2>2. Check the email subscription</h2>
+<p>Log in to your email provider's admin console and check billing. A failed card payment can suspend every mailbox.</p>
+
+<h2>3. Check the MX records</h2>
+<p>Your domain's <b>MX records</b> tell the world where to deliver your email. If someone changed name servers or DNS during a website move, the MX records may have been lost. Your email provider lists exactly what they should be. Compare and fix them where your DNS is controlled (see the <a href="../domain-not-pointing-to-new-website/">DNS guide</a>).</p>
+
+<h2>4. Read the bounce message</h2>
+<p>Ask someone to email you and forward the bounce. "Mailbox full", "user unknown" or "domain not found" each point to a different fix.</p>
+
+<h2>5. Emails arrive but yours go to spam</h2>
+<p>Your domain needs SPF, DKIM and DMARC records. Your email provider gives you the exact values to add.</p>
+""",
+  "price": "$50-150",
+  "fix": "I trace where your email is going, fix the domain and DNS records, and test sending and receiving both ways.",
+ },
+ {
+  "slug": "google-showing-wrong-title-or-description",
+  "title": "Google showing the wrong title or description for your website? How to change it",
+  "h1": "Google shows the wrong title or description for your website?",
+  "desc": "Google search results show an old name, \"Home\", or the wrong text under your website? How to set page titles and descriptions, and get Google to update them.",
+  "answer": "Google builds your search result from your page's title and description tags, and from text on the page. If those are missing, out of date or generic (like \"Home\"), Google shows whatever it finds. Set them properly, then ask Google to recrawl.",
+  "body": """
+<h2>1. Check what your page says now</h2>
+<p>Open your homepage, view the page source, and look for <code>&lt;title&gt;</code> and <code>&lt;meta name="description"&gt;</code>. A missing description, an old business name or just "Home" explains what Google shows.</p>
+
+<h2>2. Write a better title</h2>
+<p>Say what you do and where, under about 60 characters, for example "Emergency Plumber in Lakeland, FL | Smith Plumbing". Give every page its own title.</p>
+
+<h2>3. Write a description</h2>
+<p>One or two sentences, under about 155 characters, saying what you offer and why someone should click. Google may still rewrite it, but a good one is used far more often.</p>
+
+<h2>4. Where to change them</h2>
+<ul>
+  <li><b>WordPress:</b> your SEO plugin's box under each page (Yoast, Rank Math), or the theme settings.</li>
+  <li><b>Wix and Squarespace:</b> each page's SEO settings (see the <a href="../wix-site-not-showing-on-google/">Wix</a> and <a href="../squarespace-site-not-showing-on-google/">Squarespace</a> guides).</li>
+  <li><b>Shopify:</b> Online Store, Preferences for the homepage, and each product's search engine listing.</li>
+</ul>
+
+<h2>5. Ask Google to update</h2>
+<p>In Search Console, use <b>URL Inspection</b> on the page and click <b>Request indexing</b>. Updates usually show within days to a couple of weeks. If your business name changed, update your <a href="../business-not-showing-on-google-maps/">Business Profile</a> too.</p>
+""",
+  "price": "$100-150",
+  "fix": "I write clear titles and descriptions for your main pages, set them in your platform, and request recrawling.",
+ },
 ]
+
+# ---- topic clusters: drive breadcrumbs, related links and the homepage list ----
+TOPICS = [
+ ("google", "Getting found on Google", ["website-not-showing-on-google", "wix-site-not-showing-on-google", "squarespace-site-not-showing-on-google", "google-showing-wrong-title-or-description", "business-not-showing-on-google-maps", "google-maps-wrong-website-link"]),
+ ("security", "Security warnings and hacks", ["website-not-secure-warning", "godaddy-website-ssl-not-working", "this-site-may-be-hacked-warning", "wordpress-site-redirecting-to-spam"]),
+ ("down", "Site down or showing an error", ["website-500-internal-server-error", "wordpress-critical-error", "website-showing-hosting-default-page", "squarespace-website-expired", "locked-out-of-wordpress-admin"]),
+ ("domain", "Domains, DNS and email", ["domain-expired-website-down", "domain-not-pointing-to-new-website", "wix-domain-not-connected", "business-email-stopped-working", "contact-form-not-sending-emails"]),
+ ("speed", "Speed, phones and online shops", ["website-slow-to-load", "website-not-mobile-friendly", "shopify-store-password-page"]),
+]
+BY_SLUG = {g["slug"]: g for g in GUIDES}
+TOPIC_OF = {s: (key, name) for key, name, slugs in TOPICS for s in slugs}
+assert set(TOPIC_OF) == set(BY_SLUG), set(BY_SLUG) ^ set(TOPIC_OF)
+
+# extra in-body "Related" lines for guides whose text doesn't already link their closest neighbours
+SEE_ALSO = {
+ "website-not-showing-on-google": ["wix-site-not-showing-on-google", "squarespace-site-not-showing-on-google", "shopify-store-password-page", "google-showing-wrong-title-or-description"],
+ "business-not-showing-on-google-maps": ["website-not-mobile-friendly", "website-slow-to-load"],
+ "website-showing-hosting-default-page": ["website-slow-to-load"],
+ "google-showing-wrong-title-or-description": ["shopify-store-password-page", "website-not-mobile-friendly"],
+ "godaddy-website-ssl-not-working": ["domain-not-pointing-to-new-website"],
+ "website-not-secure-warning": ["godaddy-website-ssl-not-working", "domain-not-pointing-to-new-website"],
+ "wix-domain-not-connected": ["domain-not-pointing-to-new-website", "wix-site-not-showing-on-google"],
+ "squarespace-website-expired": ["domain-expired-website-down", "squarespace-site-not-showing-on-google"],
+ "google-maps-wrong-website-link": ["business-not-showing-on-google-maps", "domain-expired-website-down"],
+ "wordpress-site-redirecting-to-spam": ["this-site-may-be-hacked-warning", "locked-out-of-wordpress-admin"],
+ "shopify-store-password-page": ["website-not-showing-on-google", "google-showing-wrong-title-or-description"],
+ "website-500-internal-server-error": ["wordpress-critical-error", "website-showing-hosting-default-page"],
+ "contact-form-not-sending-emails": ["business-email-stopped-working"],
+ "wordpress-critical-error": ["website-500-internal-server-error", "locked-out-of-wordpress-admin"],
+ "website-slow-to-load": ["website-not-mobile-friendly"],
+ "website-not-mobile-friendly": ["website-slow-to-load"],
+ "domain-expired-website-down": ["business-email-stopped-working", "website-showing-hosting-default-page"],
+ "domain-not-pointing-to-new-website": ["business-email-stopped-working", "wix-domain-not-connected"],
+}
+
+BLURB = {
+ "website-not-showing-on-google": "Find and remove the setting that hides it.",
+ "wix-site-not-showing-on-google": "The Wix settings that keep you out of search.",
+ "squarespace-site-not-showing-on-google": "Trial, password and hidden-site settings.",
+ "google-showing-wrong-title-or-description": "Write titles and descriptions people click.",
+ "business-not-showing-on-google-maps": "Verification, details and suspensions.",
+ "google-maps-wrong-website-link": "Correct the link on your Business Profile.",
+ "website-not-secure-warning": "Renew or fix the SSL certificate.",
+ "godaddy-website-ssl-not-working": "Builder, hosting or domain: what to check.",
+ "this-site-may-be-hacked-warning": "Clean the site and get Google's warning removed.",
+ "wordpress-site-redirecting-to-spam": "Signs of a hack and how to clean it up.",
+ "website-500-internal-server-error": "Find the plugin, file or setting behind it.",
+ "wordpress-critical-error": "Use recovery mode and find the culprit.",
+ "website-showing-hosting-default-page": "Your domain works, but the site is missing.",
+ "squarespace-website-expired": "Bring an expired Squarespace site back.",
+ "locked-out-of-wordpress-admin": "Get back in when the reset email won't come.",
+ "domain-expired-website-down": "Renew it before someone else can buy it.",
+ "domain-not-pointing-to-new-website": "DNS records, www, and keeping email working.",
+ "wix-domain-not-connected": "Reconnect your domain to your Wix site.",
+ "business-email-stopped-working": "Domain, subscription or MX records.",
+ "contact-form-not-sending-emails": "Get enquiries landing in your inbox again.",
+ "website-slow-to-load": "Measure it, then fix the biggest causes.",
+ "website-not-mobile-friendly": "From one missing line to a responsive theme.",
+ "shopify-store-password-page": "Open your store to customers and Google.",
+}
+assert set(BLURB) == set(BY_SLUG)
+
+def short(slug):
+    return BY_SLUG[slug]["h1"].rstrip("?")
+
+def related_for(slug):
+    key = TOPIC_OF[slug][0]
+    same = [s for k, n, ss in TOPICS if k == key for s in ss if s != slug]
+    out = list(same)
+    for s in SEE_ALSO.get(slug, []):
+        if s not in out: out.append(s)
+    # fill from other topics, round robin, to at least 6
+    others = [ss for k, n, ss in TOPICS if k != key]
+    i = 0
+    while len(out) < 6 and any(others):
+        bucket = others[i % len(others)]
+        for s in bucket:
+            if s not in out and s != slug: out.append(s); break
+        i += 1
+        if i > 50: break
+    return out[:8]
 
 HEAD = """<!doctype html>
 <html lang="en">
@@ -496,7 +731,7 @@ HEAD = """<!doctype html>
     </nav>
   </header>
   <main class="article">
-    <a class="crumb" href="../#guides">Guides</a>
+    <a class="crumb" href="../#{topic_key}">Guides: {topic_name}</a>
     <h1>{h1}</h1>
     <p class="answer">{answer}</p>
 {body}
@@ -505,7 +740,7 @@ HEAD = """<!doctype html>
       <p>{fix} Fixed price {price}, agreed first, and you pay when it works.</p>
       <a class="btn solid" href="../#check">Get a free check</a>
     </div>
-    <div class="related"><b>Other guides</b>
+    <div class="related"><b>Related guides</b>
 {related}
     </div>
   </main>
@@ -529,15 +764,23 @@ for g in GUIDES:
          "publisher": {"@type": "Person", "name": "Alex Mugo Ndungu"}},
         {"@type": "BreadcrumbList", "itemListElement": [
           {"@type": "ListItem", "position": 1, "name": "Website repair", "item": BASE},
-          {"@type": "ListItem", "position": 2, "name": g["h1"], "item": url}]}
+          {"@type": "ListItem", "position": 2, "name": TOPIC_OF[g["slug"]][1], "item": BASE + "#" + TOPIC_OF[g["slug"]][0]},
+          {"@type": "ListItem", "position": 3, "name": g["h1"], "item": url}]}
       ]}
-    i = GUIDES.index(g)
-    picks = [GUIDES[(i + k) % len(GUIDES)] for k in range(1, 7)]
-    related = "\n".join(f'      <a href="../{o["slug"]}/">{html.escape(o["h1"])}</a>' for o in picks) + \
+    rel = related_for(g["slug"])
+    related = "\n".join(f'      <a href="../{s}/">{html.escape(BY_SLUG[s]["h1"])}</a>' for s in rel) + \
               '\n      <a href="../#guides">All guides</a>'
+    body = g["body"]
+    see = [s for s in SEE_ALSO.get(g["slug"], []) if f'href="../{s}/"' not in body]
+    if see:
+        links = [f'<a href="../{s}/">{html.escape(short(s))}</a>' for s in see]
+        joined = links[0] if len(links) == 1 else ", ".join(links[:-1]) + " and " + links[-1]
+        body = body.rstrip() + f'\n\n<p class="see"><b>Related:</b> {joined}.</p>\n'
+    tk, tn = TOPIC_OF[g["slug"]]
     page = HEAD.format(title=html.escape(g["title"]), desc=html.escape(g["desc"]), url=url,
                        ld=json.dumps(ld, indent=2), h1=html.escape(g["h1"]), answer=html.escape(g["answer"]),
-                       body=g["body"], fix=html.escape(g["fix"]), price=g["price"], related=related)
+                       body=body, fix=html.escape(g["fix"]), price=g["price"], related=related,
+                       topic_key=tk, topic_name=html.escape(tn))
     d = os.path.join(SITE, g["slug"]); os.makedirs(d, exist_ok=True)
     open(os.path.join(d, "index.html"), "w", encoding="utf-8").write(page)
     print("wrote", g["slug"])
@@ -548,3 +791,18 @@ sm = '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps
      "".join(f"  <url><loc>{u}</loc><lastmod>{TODAY}</lastmod></url>\n" for u in urls) + "</urlset>\n"
 open(os.path.join(SITE, "sitemap.xml"), "w", encoding="utf-8").write(sm)
 print("wrote sitemap.xml with", len(urls), "urls")
+
+# homepage guide list, grouped by topic, between markers in index.html
+blocks = []
+for key, name, slugs in TOPICS:
+    items = "\n".join(
+        f'        <a href="{s}/"><b>{html.escape(BY_SLUG[s]["h1"])}</b><span>{html.escape(BLURB[s])}</span></a>'
+        for s in slugs)
+    blocks.append(f'    <div class="guide-topic" id="{key}">\n      <h3>{html.escape(name)}</h3>\n      <div class="guides">\n{items}\n      </div>\n    </div>')
+idx_path = os.path.join(SITE, "index.html")
+idx = open(idx_path, encoding="utf-8").read()
+start, end = "<!-- guides:start -->", "<!-- guides:end -->"
+a, b = idx.index(start) + len(start), idx.index(end)
+idx = idx[:a] + "\n" + "\n".join(blocks) + "\n    " + idx[b:]
+open(idx_path, "w", encoding="utf-8").write(idx)
+print("homepage guide list:", sum(len(s) for _, _, s in TOPICS), "guides in", len(TOPICS), "topics")
