@@ -3,185 +3,266 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Fix My Site · Small website problems, fixed fast</title>
-<meta name="description" content="Website down, hidden from Google, showing a security warning or pointing to the wrong place? Fixed-price repairs for small businesses in the US, UK and Ireland. Pay when it's fixed.">
-<meta property="og:title" content="Fix My Site · Small website problems, fixed fast">
-<meta property="og:description" content="Fixed-price website repairs for small businesses. Free diagnosis, pay when it's fixed.">
+<title>Alex Mugo, website repairs for small businesses</title>
+<meta name="description" content="Website down, hidden from Google, showing a security warning or linked wrong on Google Maps? Fixed-price repairs for small businesses. Free check, pay when it works.">
+<meta property="og:title" content="Alex Mugo, website repairs for small businesses">
+<meta property="og:description" content="Fixed-price website repairs. Free check, pay when it works.">
 <meta property="og:type" content="website">
+<meta property="og:image" content="img/wix-domain-error.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
   :root {
-    --bg: #fbfaf7; --surface: #ffffff; --ink: #1c2320; --muted: #5b6661;
-    --line: #e4e2dc; --brand: #1f6b4f; --brand-ink: #ffffff; --accent: #f3efe4;
-    --ok: #1f6b4f; --warn: #b4531c; --radius: 14px;
+    --bg: #f1f2ef; --paper: #fbfbf9; --ink: #17181a; --muted: #585b61; --line: #d5d7d2;
+    --accent: #d9431c; --accent-ink: #ffffff; --tint: #e7e9e4;
+    --r: 3px;
+    --mono: "IBM Plex Mono", ui-monospace, Menlo, monospace;
   }
   @media (prefers-color-scheme: dark) {
     :root {
-      --bg: #121614; --surface: #1a201d; --ink: #e9ece9; --muted: #9aa59f;
-      --line: #2b332f; --brand: #4fb48b; --brand-ink: #0d1411; --accent: #1f2622;
-      --ok: #4fb48b; --warn: #e3935f;
+      --bg: #141517; --paper: #1b1c1f; --ink: #ecedea; --muted: #a1a4aa; --line: #2c2e33;
+      --accent: #ff6b3f; --accent-ink: #141517; --tint: #1f2124;
     }
   }
   * { box-sizing: border-box; }
   html { scroll-behavior: smooth; }
-  body { margin: 0; background: var(--bg); color: var(--ink); font: 16px/1.6 Inter, system-ui, -apple-system, "Segoe UI", sans-serif; }
-  a { color: var(--brand); }
-  .wrap { max-width: 1040px; margin: 0 auto; padding: 0 20px; }
-  header.top { display: flex; align-items: center; justify-content: space-between; padding: 18px 0; }
-  .logo { font-weight: 700; letter-spacing: -.01em; text-decoration: none; color: var(--ink); display: flex; align-items: center; gap: 10px; }
-  .logo span.mark { width: 28px; height: 28px; border-radius: 8px; background: var(--brand); color: var(--brand-ink); display: grid; place-items: center; font-size: 15px; }
-  nav a { color: var(--muted); text-decoration: none; margin-left: 20px; font-size: 15px; }
-  nav a:hover { color: var(--ink); }
-  @media (max-width: 640px) { nav a:not(.cta-link) { display: none; } }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } * { transition: none !important; } }
+  body { margin: 0; background: var(--bg); color: var(--ink); font: 17px/1.6 Archivo, system-ui, sans-serif; font-variation-settings: "wdth" 100; }
+  a { color: inherit; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+  img { max-width: 100%; height: auto; display: block; }
+  .hero > *, .screens > *, .quote > *, .about > *, .board > *, .faq > * { min-width: 0; }
+  .wrap { max-width: 1120px; margin: 0 auto; padding: 0 24px; }
+  @media (max-width: 640px) { .wrap { padding: 0 16px; } }
 
-  .hero { padding: 48px 0 56px; display: grid; grid-template-columns: 1.25fr 1fr; gap: 40px; align-items: center; }
-  @media (max-width: 820px) { .hero { grid-template-columns: 1fr; padding-top: 24px; } }
-  h1 { font-family: Fraunces, Georgia, serif; font-weight: 600; font-size: clamp(34px, 5.4vw, 54px); line-height: 1.08; letter-spacing: -.02em; margin: 0 0 18px; }
-  .lead { font-size: 19px; color: var(--muted); margin: 0 0 28px; max-width: 34em; }
-  .btns { display: flex; gap: 12px; flex-wrap: wrap; }
-  .btn { display: inline-flex; align-items: center; gap: 8px; padding: 13px 20px; border-radius: 999px; font-weight: 600; text-decoration: none; border: 1px solid transparent; }
-  .btn.primary { background: var(--brand); color: var(--brand-ink); }
-  .btn.ghost { border-color: var(--line); color: var(--ink); background: var(--surface); }
-  .btn:hover { filter: brightness(1.05); }
-  .promise { margin-top: 22px; display: flex; gap: 18px; flex-wrap: wrap; color: var(--muted); font-size: 14px; }
-  .promise b { color: var(--ink); font-weight: 600; }
+  /* header */
+  .top { display: flex; align-items: center; justify-content: space-between; height: 72px; border-bottom: 1px solid var(--line); }
+  .name { text-decoration: none; line-height: 1.1; }
+  .name b { display: block; font-weight: 800; font-size: 19px; font-stretch: 112%; letter-spacing: -.01em; }
+  .name span { font-family: var(--mono); font-size: 12.5px; color: var(--muted); }
+  .top nav { display: flex; align-items: center; gap: 26px; font-size: 15px; }
+  .top nav a { text-decoration: none; color: var(--muted); }
+  .top nav a:hover { color: var(--ink); }
+  @media (max-width: 760px) { .top nav a.hide-sm { display: none; } }
 
-  .checker { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 22px; box-shadow: 0 10px 30px -18px rgba(0,0,0,.25); }
-  .checker h3 { margin: 0 0 14px; font-size: 15px; color: var(--muted); font-weight: 600; text-transform: uppercase; letter-spacing: .06em; }
-  .row { display: flex; align-items: flex-start; gap: 12px; padding: 11px 0; border-top: 1px solid var(--line); font-size: 15px; }
-  .row:first-of-type { border-top: 0; }
-  .dot { flex: none; width: 10px; height: 10px; border-radius: 50%; margin-top: 7px; background: var(--warn); }
-  .row small { display: block; color: var(--muted); }
+  .btn { display: inline-block; padding: 12px 20px; border-radius: var(--r); font-weight: 600; text-decoration: none; font-size: 16px; border: 1.5px solid var(--ink); color: var(--ink); background: transparent; cursor: pointer; white-space: nowrap; font-family: inherit; transition: transform .12s ease; }
+  .btn:active { transform: translateY(1px); }
+  .btn.solid { background: var(--accent); border-color: var(--accent); color: var(--accent-ink); }
+  .top .btn { padding: 8px 14px; font-size: 15px; color: var(--accent-ink); }
 
-  section { padding: 56px 0; }
-  section.alt { background: var(--accent); }
-  h2 { font-family: Fraunces, Georgia, serif; font-weight: 600; font-size: clamp(26px, 3.6vw, 36px); letter-spacing: -.01em; margin: 0 0 10px; }
-  .sub { color: var(--muted); margin: 0 0 30px; max-width: 40em; }
+  /* hero */
+  .hero { display: grid; grid-template-columns: 1fr 1.05fr; gap: 56px; align-items: center; padding: 64px 0 72px; }
+  @media (max-width: 900px) { .hero { grid-template-columns: 1fr; gap: 36px; padding: 40px 0 48px; } }
+  h1 { font-weight: 800; font-stretch: 75%; font-size: clamp(44px, 6.4vw, 76px); line-height: .98; letter-spacing: -.01em; margin: 0 0 22px; text-transform: none; }
+  h1 em { font-style: normal; color: var(--accent); }
+  .hero p.sub { font-size: 19px; color: var(--muted); max-width: 30em; margin: 0 0 30px; }
+  .hero .btns { display: flex; gap: 12px; flex-wrap: wrap; }
+  figure { margin: 0; }
+  .shot { border: 1px solid var(--line); border-radius: var(--r); overflow: hidden; background: #fff; box-shadow: 0 1px 0 var(--line), 0 24px 40px -28px rgba(23,24,26,.35); }
+  figcaption { font-family: var(--mono); font-size: 13px; color: var(--muted); margin-top: 12px; }
+  .hero figure { transform: rotate(1.2deg); }
+  @media (max-width: 900px) { .hero figure { transform: none; } }
 
-  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(290px, 1fr)); gap: 16px; }
-  .card { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 20px; display: flex; flex-direction: column; }
-  .card h3 { margin: 0 0 6px; font-size: 17px; }
-  .card p { margin: 0 0 16px; color: var(--muted); font-size: 15px; flex: 1; }
-  .price { display: flex; justify-content: space-between; align-items: baseline; border-top: 1px dashed var(--line); padding-top: 12px; font-size: 14px; color: var(--muted); }
-  .price strong { font-size: 20px; color: var(--ink); }
+  section { padding: 80px 0; border-top: 1px solid var(--line); }
+  h2 { font-weight: 800; font-stretch: 80%; font-size: clamp(32px, 4.2vw, 48px); line-height: 1.02; margin: 0 0 14px; letter-spacing: -.005em; }
+  .intro { color: var(--muted); max-width: 36em; margin: 0 0 40px; }
 
-  .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; counter-reset: s; }
-  @media (max-width: 760px) { .steps { grid-template-columns: 1fr; } }
-  .step { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 22px; }
-  .step::before { counter-increment: s; content: counter(s); display: inline-grid; place-items: center; width: 30px; height: 30px; border-radius: 50%; background: var(--brand); color: var(--brand-ink); font-weight: 700; margin-bottom: 12px; }
-  .step h3 { margin: 0 0 6px; font-size: 17px; }
-  .step p { margin: 0; color: var(--muted); font-size: 15px; }
+  /* screens */
+  .screens { display: grid; grid-template-columns: 1.6fr 1fr; gap: 28px; align-items: start; }
+  .screens .tall { grid-row: span 2; }
+  @media (max-width: 800px) { .screens { grid-template-columns: 1fr; } .screens .tall { grid-row: auto; } }
+  .screens .note { background: var(--tint); border-radius: var(--r); padding: 24px; }
+  .screens .note p { margin: 0 0 10px; }
+  .screens .note p:last-child { margin: 0; }
 
-  .cases { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 16px; }
-  .case { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 20px; font-size: 15px; }
-  .case .tag { font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: .06em; color: var(--warn); }
-  .case p { margin: 8px 0 0; color: var(--muted); }
-  .case p b { color: var(--ink); font-weight: 600; }
+  /* price board */
+  .board { background: var(--paper); border: 1px solid var(--line); border-radius: var(--r); padding: 36px 40px; display: grid; grid-template-columns: 1fr 1fr; column-gap: 56px; }
+  @media (max-width: 800px) { .board { grid-template-columns: 1fr; padding: 24px 20px; } }
+  .item { padding: 16px 0; border-bottom: 1px dashed var(--line); }
+  .item:nth-last-child(-n+2) { border-bottom: 0; }
+  @media (max-width: 800px) { .item:nth-last-child(2) { border-bottom: 1px dashed var(--line); } }
+  .item .head { display: flex; align-items: baseline; gap: 10px; }
+  .item .head b { font-weight: 700; font-size: 18px; }
+  .item .head i { flex: 1; border-bottom: 2px dotted var(--line); transform: translateY(-5px); }
+  .item .head span { font-family: var(--mono); font-weight: 500; font-size: 16px; white-space: nowrap; }
+  .item p { margin: 4px 0 0; color: var(--muted); font-size: 15.5px; }
+  .board-note { margin: 18px 0 0; font-size: 15px; color: var(--muted); }
 
-  .about { display: grid; grid-template-columns: 1.3fr 1fr; gap: 32px; align-items: start; }
-  @media (max-width: 820px) { .about { grid-template-columns: 1fr; } }
-  .facts { list-style: none; padding: 0; margin: 0; }
-  .facts li { padding: 12px 0; border-top: 1px solid var(--line); }
-  .facts li:first-child { border-top: 0; }
-  .facts b { display: block; font-size: 22px; font-family: Fraunces, Georgia, serif; }
-  .facts span { color: var(--muted); font-size: 14px; }
+  /* quote form */
+  .quote { display: grid; grid-template-columns: .85fr 1.15fr; gap: 56px; }
+  @media (max-width: 900px) { .quote { grid-template-columns: 1fr; gap: 28px; } }
+  .discount { margin-top: 28px; border-left: 4px solid var(--accent); padding: 4px 0 4px 18px; }
+  .discount b { display: block; font-size: 20px; font-stretch: 85%; font-weight: 800; }
+  .discount span { color: var(--muted); font-size: 15.5px; }
+  form { background: var(--paper); border: 1px solid var(--line); border-radius: var(--r); padding: 28px; display: grid; gap: 18px; }
+  @media (max-width: 640px) { form { padding: 20px; } }
+  .field { display: grid; gap: 6px; }
+  .two { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+  @media (max-width: 640px) { .two { grid-template-columns: 1fr; } }
+  label, legend { font-weight: 600; font-size: 15px; }
+  .help { font-size: 13.5px; color: var(--muted); }
+  input[type=text], input[type=url], textarea { width: 100%; font: inherit; font-size: 16px; color: var(--ink); background: var(--bg); border: 1px solid #b9bcb6; border-radius: var(--r); padding: 11px 12px; }
+  @media (prefers-color-scheme: dark) { input[type=text], input[type=url], textarea { border-color: #44474d; } }
+  input:focus, textarea:focus { outline: 2px solid var(--accent); outline-offset: 1px; }
+  textarea { min-height: 120px; resize: vertical; }
+  fieldset { border: 0; padding: 0; margin: 0; }
+  .checks { display: grid; grid-template-columns: 1fr 1fr; gap: 8px 18px; margin-top: 8px; }
+  @media (max-width: 640px) { .checks { grid-template-columns: 1fr; } }
+  .checks label { font-weight: 400; display: flex; gap: 10px; align-items: flex-start; font-size: 15.5px; }
+  .checks input { accent-color: var(--accent); width: 17px; height: 17px; margin-top: 4px; flex: none; }
+  .error { color: var(--accent); font-size: 14px; min-height: 1em; }
+  .form-foot { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
+  .form-foot .help a { color: var(--ink); }
 
-  details { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 16px 18px; margin-bottom: 10px; }
-  summary { cursor: pointer; font-weight: 600; list-style: none; }
-  summary::-webkit-details-marker { display: none; }
-  summary::after { content: "+"; float: right; color: var(--muted); }
-  details[open] summary::after { content: "–"; }
-  details p { margin: 10px 0 0; color: var(--muted); }
+  /* how */
+  .how { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 2px solid var(--ink); }
+  @media (max-width: 800px) { .how { grid-template-columns: 1fr; } }
+  .how div { padding: 22px 28px 0 0; }
+  @media (max-width: 800px) { .how div { padding: 18px 0; border-bottom: 1px solid var(--line); } }
+  .how h3 { margin: 0 0 6px; font-size: 20px; font-stretch: 90%; font-weight: 700; }
+  .how p { margin: 0; color: var(--muted); }
 
-  .contact { background: var(--brand); color: var(--brand-ink); border-radius: 20px; padding: 40px; display: grid; grid-template-columns: 1.2fr 1fr; gap: 24px; align-items: center; }
-  @media (max-width: 760px) { .contact { grid-template-columns: 1fr; padding: 28px; } }
-  .contact h2 { color: var(--brand-ink); }
-  .contact p { margin: 0; opacity: .9; }
-  .contact .btn.primary { background: var(--brand-ink); color: var(--brand); }
-  .contact .btn.ghost { background: transparent; color: var(--brand-ink); border-color: currentColor; }
-  footer { padding: 28px 0 40px; color: var(--muted); font-size: 14px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; }
+  /* about */
+  .about { display: grid; grid-template-columns: 1.4fr 1fr; gap: 56px; align-items: start; }
+  @media (max-width: 900px) { .about { grid-template-columns: 1fr; gap: 28px; } }
+  .about p { margin: 0 0 16px; max-width: 34em; }
+  .sig { font-weight: 700; font-stretch: 85%; font-size: 22px; }
+  .stats { display: grid; gap: 22px; }
+  .stats div b { display: block; font-family: var(--mono); font-weight: 500; font-size: 26px; }
+  .stats div span { color: var(--muted); font-size: 15px; }
+
+  /* faq */
+  .faq { display: grid; grid-template-columns: 1fr 1fr; gap: 34px 56px; }
+  @media (max-width: 800px) { .faq { grid-template-columns: 1fr; gap: 24px; } }
+  .faq h3 { margin: 0 0 6px; font-size: 18px; font-weight: 700; }
+  .faq p { margin: 0; color: var(--muted); }
+
+  footer { border-top: 1px solid var(--line); padding: 28px 0 44px; display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; font-size: 15px; color: var(--muted); }
+  footer a { color: var(--ink); }
 </style>
 </head>
 <body>
 <div class="wrap">
   <header class="top">
-    <a class="logo" href="#"><span class="mark">✓</span>Fix My Site</a>
+    <a class="name" href="#"><b>Alex Mugo</b><span>website repairs</span></a>
     <nav>
-      <a href="#fixes">Fixes &amp; prices</a>
-      <a href="#how">How it works</a>
-      <a href="#faq">FAQ</a>
-      <a class="cta-link" href="#contact">Free check</a>
+      <a class="hide-sm" href="#prices">Prices</a>
+      <a class="hide-sm" href="#how">How it works</a>
+      <a class="hide-sm" href="#questions">Questions</a>
+      <a class="btn solid" href="#check">Get a free check</a>
     </nav>
   </header>
 
   <div class="hero">
     <div>
-      <h1>Small website problems, fixed fast. Pay when it's fixed.</h1>
-      <p class="lead">Is your site down, hidden from Google, showing a "Not secure" warning, or linked to the wrong place on Google Maps? I find the cause, fix it for a fixed price, and you pay only once it works.</p>
+      <h1>Website broken? <em>I'll fix it.</em></h1>
+      <p class="sub">Down, hidden from Google, or showing "Not secure". A fixed price agreed first, and you pay when it works.</p>
       <div class="btns">
-        <a class="btn primary" href="#contact">Get a free check</a>
-        <a class="btn ghost" href="#fixes">See prices</a>
-      </div>
-      <div class="promise">
-        <span><b>Free</b> diagnosis</span>
-        <span><b>Fixed</b> price, agreed first</span>
-        <span><b>14-day</b> fix guarantee</span>
+        <a class="btn solid" href="#check">Get a free check</a>
+        <a class="btn" href="#prices">See prices</a>
       </div>
     </div>
-    <aside class="checker" aria-label="Common problems">
-      <h3>Problems I find every week</h3>
-      <div class="row"><span class="dot"></span><div>Site set to "noindex"<small>Google is told not to show it at all</small></div></div>
-      <div class="row"><span class="dot"></span><div>Expired security certificate<small>Visitors see "Your connection is not private"</small></div></div>
-      <div class="row"><span class="dot"></span><div>Domain expired or unlinked<small>The address shows an error or a builder's placeholder</small></div></div>
-      <div class="row"><span class="dot"></span><div>Wrong website on Google Maps<small>The "Website" button sends customers to a stranger's page</small></div></div>
-      <div class="row"><span class="dot"></span><div>Doesn't fit on phones<small>People pinch, zoom and leave</small></div></div>
-    </aside>
+    <figure>
+      <div class="shot"><img src="img/wix-domain-error.jpg" width="1100" height="688" alt="A Wix page saying: This domain isn't connected to a site" fetchpriority="high"></div>
+      <figcaption>What a guest house's customers saw this week instead of its booking page.</figcaption>
+    </figure>
   </div>
 </div>
 
-<section id="fixes" class="alt">
+<section>
   <div class="wrap">
-    <h2>Fixes and prices</h2>
-    <p class="sub">Every job is a fixed price agreed before I start. Prices are in US dollars; I quote the same in pounds or euros.</p>
-    <div class="grid">
-      <div class="card"><h3>Hidden from Google</h3><p>A "noindex" setting or a blocking robots.txt left switched on. I remove it, check your pages and ask Google to look again.</p><div class="price"><span>1 hour</span><strong>$100–150</strong></div></div>
-      <div class="card"><h3>"Not secure" warning</h3><p>Expired, wrong or missing security certificate. I install a free certificate that renews itself and make every page secure.</p><div class="price"><span>1–2 hours</span><strong>$100–200</strong></div></div>
-      <div class="card"><h3>Wrong link or dead domain</h3><p>Your Google listing points to the wrong site, your domain lapsed, or Wix/Squarespace lost the connection. I put it right.</p><div class="price"><span>About 1 hour</span><strong>$50–150</strong></div></div>
-      <div class="card"><h3>Site down or showing an error</h3><p>Server errors, database errors, "website expired" or hosting placeholder pages. Back online, with a backup.</p><div class="price"><span>2–5 hours</span><strong>$150–350</strong></div></div>
-      <div class="card"><h3>Broken booking, order or contact form</h3><p>Enquiries that never arrive or buttons that go nowhere. I trace it and test it end to end.</p><div class="price"><span>1–3 hours</span><strong>$100–250</strong></div></div>
-      <div class="card"><h3>Out of date or slow</h3><p>Old WordPress with missed security updates, or pages that take 8 seconds to load. Safe update with a full backup first.</p><div class="price"><span>Half a day</span><strong>$200–350</strong></div></div>
-      <div class="card"><h3>Not mobile-friendly</h3><p>Make your existing site fit and work on phones, keeping your content and look.</p><div class="price"><span>1–2 days</span><strong>$250–500</strong></div></div>
-      <div class="card"><h3>No website yet</h3><p>A fast one-page site on your own domain: services, hours, photos, map and a tap-to-call or booking button.</p><div class="price"><span>1–2 days</span><strong>$250–450</strong></div></div>
-      <div class="card"><h3>Keep it working</h3><p>Monthly care: updates, backups, uptime and certificate monitoring, and small text changes when you need them.</p><div class="price"><span>Ongoing</span><strong>$25–40/mo</strong></div></div>
+    <h2>Seen one of these on your own site?</h2>
+    <p class="intro">Owners rarely find out. Customers don't complain, they just book somewhere else. All three of these were live on small business websites in November 2026.</p>
+    <div class="screens">
+      <figure class="tall">
+        <div class="shot"><img src="img/hosting-default-page.jpg" width="1100" height="516" alt="A hosting company's default page saying there is no website at this address" loading="lazy"></div>
+        <figcaption>A gift shop's address showing the hosting company's placeholder.</figcaption>
+      </figure>
+      <figure>
+        <div class="shot"><img src="img/website-expired.jpg" width="760" height="370" alt="A Squarespace page saying Website Expired" loading="lazy"></div>
+        <figcaption>An auto repair shop after its subscription lapsed.</figcaption>
+      </figure>
+      <div class="note">
+        <p><b>Also common, and invisible to you:</b></p>
+        <p>A setting that tells Google not to list the site. An expired security certificate. A Google Maps "Website" button that sends people to a stranger's page.</p>
+      </div>
     </div>
+  </div>
+</section>
+
+<section id="prices">
+  <div class="wrap">
+    <h2>Prices</h2>
+    <p class="intro">Fixed prices in US dollars. I quote the same in pounds or euros. Not sure which one you need? Ask for a free check.</p>
+    <div class="board">
+      <div class="item"><div class="head"><b>Hidden from Google</b><i></i><span>$100-150</span></div><p>Remove the "noindex" or robots.txt block and ask Google to look again.</p></div>
+      <div class="item"><div class="head"><b>"Not secure" warning</b><i></i><span>$100-200</span></div><p>A free certificate that renews itself, on every page.</p></div>
+      <div class="item"><div class="head"><b>Wrong link or dead domain</b><i></i><span>$50-150</span></div><p>Google listing, expired domain, or Wix and Squarespace unlinked.</p></div>
+      <div class="item"><div class="head"><b>Site down or showing an error</b><i></i><span>$150-350</span></div><p>Back online, with a backup taken first.</p></div>
+      <div class="item"><div class="head"><b>Broken booking or contact form</b><i></i><span>$100-250</span></div><p>Traced, fixed and tested end to end.</p></div>
+      <div class="item"><div class="head"><b>Outdated or slow</b><i></i><span>$200-350</span></div><p>Old WordPress updated safely, pages that load fast.</p></div>
+      <div class="item"><div class="head"><b>Doesn't fit on phones</b><i></i><span>$250-500</span></div><p>Your site, your content, working on a phone.</p></div>
+      <div class="item"><div class="head"><b>No website yet</b><i></i><span>$250-450</span></div><p>One page on your own domain: services, hours, map, call button.</p></div>
+      <div class="item"><div class="head"><b>Keep it working</b><i></i><span>$25-40 a month</span></div><p>Updates, backups, and a warning before anything breaks.</p></div>
+      <div class="item"><div class="head"><b>Something else</b><i></i><span>Custom quote</span></div><p>Describe it below and I'll price it.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="check">
+  <div class="wrap quote">
+    <div>
+      <h2>Tell me what's wrong</h2>
+      <p class="intro" style="margin-bottom:0">Describe the problem in your own words. I'll look at your site and reply within one working day with what's wrong and a fixed price. If it's a two-minute job, I'll just tell you how to do it.</p>
+      <div class="discount">
+        <b>More than one problem? It costs less.</b>
+        <span>Two fixes: 10% off the prices above. Three or more: 15% off.</span>
+      </div>
+    </div>
+    <form id="quote-form" novalidate>
+      <div class="two">
+        <div class="field"><label for="q-name">Your name</label><input id="q-name" type="text" autocomplete="name"></div>
+        <div class="field"><label for="q-biz">Business name</label><input id="q-biz" type="text" autocomplete="organization"></div>
+      </div>
+      <div class="field">
+        <label for="q-site">Website address</label>
+        <input id="q-site" type="text" inputmode="url" placeholder="yourbusiness.com">
+        <span class="help">No website? Put the name as it appears on Google Maps.</span>
+      </div>
+      <fieldset>
+        <legend>What's going on? Tick any that apply.</legend>
+        <div class="checks">
+          <label><input type="checkbox" name="issue" value="Site is down or shows an error">Site is down or shows an error</label>
+          <label><input type="checkbox" name="issue" value="Not showing on Google">Not showing on Google</label>
+          <label><input type="checkbox" name="issue" value="Browser says Not secure">Browser says "Not secure"</label>
+          <label><input type="checkbox" name="issue" value="Wrong link on Google Maps">Wrong link on Google Maps</label>
+          <label><input type="checkbox" name="issue" value="Form or booking not working">Form or booking not working</label>
+          <label><input type="checkbox" name="issue" value="Slow or out of date">Slow or out of date</label>
+          <label><input type="checkbox" name="issue" value="Doesn't work on phones">Doesn't work on phones</label>
+          <label><input type="checkbox" name="issue" value="Need a new website">Need a new website</label>
+        </div>
+      </fieldset>
+      <div class="field">
+        <label for="q-desc">Describe the problem</label>
+        <textarea id="q-desc" placeholder="What you or your customers see, and when it started."></textarea>
+      </div>
+      <div class="error" id="q-error" role="alert"></div>
+      <div class="form-foot">
+        <button class="btn solid" type="submit">Email my request</button>
+        <span class="help">Opens your email app. Or write to <a href="mailto:mugo.ndung@gmail.com">mugo.ndung@gmail.com</a> or <a href="https://wa.me/254727774858" rel="noopener">WhatsApp me</a>.</span>
+      </div>
+    </form>
   </div>
 </section>
 
 <section id="how">
   <div class="wrap">
     <h2>How it works</h2>
-    <p class="sub">No contracts, no retainers, no jargon.</p>
-    <div class="steps">
-      <div class="step"><h3>Free check</h3><p>Send me your web address. Within a day I reply with what's wrong in plain words, and a fixed price to fix it. If it's a two-minute job, I'll just tell you how.</p></div>
-      <div class="step"><h3>I fix it</h3><p>You add me as a user on your website or domain account; I never need your password. I fix it, test it on desktop and phone, and send before/after screenshots.</p></div>
-      <div class="step"><h3>You pay when it works</h3><p>Pay the agreed price by card or PayPal once you've seen it working. Jobs over $300: half up front, half on completion.</p></div>
-    </div>
-  </div>
-</section>
-
-<section class="alt">
-  <div class="wrap">
-    <h2>The kind of thing I fix</h2>
-    <p class="sub">Real problems found on small business websites this month. Business names left out.</p>
-    <div class="cases">
-      <div class="case"><span class="tag">Restaurant · Ireland</span><p>The live site told Google <b>"noindex, nofollow"</b>, so it never appeared when people searched for the restaurant's cuisine in town.</p></div>
-      <div class="case"><span class="tag">HVAC company · Connecticut</span><p>The security certificate <b>expired over a year ago</b>, so every visitor saw a full-page browser warning.</p></div>
-      <div class="case"><span class="tag">Hair salon · Indiana</span><p>The <b>"Website" button on Google Maps</b> sent customers to an unrelated directory full of ads.</p></div>
-      <div class="case"><span class="tag">Auto repair · Indiana</span><p>The site showed <b>"Website Expired"</b> after a website-builder subscription lapsed.</p></div>
-      <div class="case"><span class="tag">Guest house · England</span><p>The domain came <b>unlinked from its Wix site</b>, so the address showed an error page and was blocked from Google.</p></div>
-      <div class="case"><span class="tag">Café · England</span><p>The domain on the Google listing had <b>expired</b>, so tapping "Website" led nowhere.</p></div>
+    <p class="intro">No contract and nothing to pay up front for small jobs.</p>
+    <div class="how">
+      <div><h3>You tell me</h3><p>Send your web address and what's wrong. I reply within a working day with the cause and a fixed price.</p></div>
+      <div><h3>I fix it</h3><p>You add me as a user on your site or domain account, so I never need your password. I fix it and send before and after screenshots.</p></div>
+      <div><h3>You pay</h3><p>Once you've seen it working, by card or PayPal. Jobs over $300 are half up front, half on completion.</p></div>
     </div>
   </div>
 </section>
@@ -189,52 +270,65 @@
 <section id="about">
   <div class="wrap about">
     <div>
-      <h2>Who you'll be working with</h2>
-      <p>I'm Alex Mugo Ndungu, a full-stack web developer who has been building production software since 2016. I hold a BSc in Computer Science (First Class Honours) from the University of Nairobi.</p>
-      <p>I built and run Ikweta, an operations platform that replaced a business's spreadsheets and has been live since September 2026. I also build billing systems, WhatsApp and SMS notifications, and fix websites for small businesses. I work remotely from Nairobi, Kenya, and reply within a working day; my mornings overlap with the UK and Ireland and my afternoons with the US.</p>
-      <p><a href="https://www.linkedin.com/in/alexmugo-dev" rel="noopener">LinkedIn</a> · <a href="https://github.com/Mugo-Ndungu" rel="noopener">GitHub</a></p>
+      <h2>Hi, I'm Alex</h2>
+      <p>I'm a web developer in Nairobi, Kenya, and I've been building software that businesses rely on since 2016. I studied Computer Science at the University of Nairobi and graduated with First Class Honours.</p>
+      <p>Most of my work is bigger systems: an operations platform called Ikweta that replaced a company's spreadsheets, billing systems, and WhatsApp and SMS notifications. Fixing small business websites is the part where a few hours of my time makes the biggest difference to someone.</p>
+      <p>I work late afternoons and evenings my time, which is your morning in the UK and Ireland and your working day in the US.</p>
+      <p class="sig">Alex Mugo Ndungu</p>
+      <p><a href="https://www.linkedin.com/in/alexmugo-dev" rel="noopener">LinkedIn</a> &nbsp; <a href="https://github.com/Mugo-Ndungu" rel="noopener">GitHub</a></p>
     </div>
-    <ul class="facts">
-      <li><b>2016</b><span>shipping production software</span></li>
-      <li><b>1,851 / 1,851</b><span>figures matched when Ikweta replaced the spreadsheets</span></li>
-      <li><b>14 days</b><span>free re-fix if the same problem comes back</span></li>
-    </ul>
+    <div class="stats">
+      <div><b>Since 2016</b><span>building production software</span></div>
+      <div><b>1,851 of 1,851</b><span>figures matched when Ikweta replaced the spreadsheets</span></div>
+      <div><b>14 days</b><span>free re-fix if the same problem comes back</span></div>
+    </div>
   </div>
 </section>
 
-<section id="faq" class="alt">
+<section id="questions">
   <div class="wrap">
     <h2>Questions</h2>
-    <p class="sub">If yours isn't here, just ask.</p>
-    <details><summary>Do you need my password?</summary><p>No. Wix, Squarespace, WordPress, Shopify, Google Business Profile and domain registrars all let you add me as a user or collaborator. You can remove me as soon as the job is done.</p></details>
-    <details><summary>What if you can't fix it?</summary><p>Then you don't pay. If I find the problem is bigger than we agreed, I'll tell you before doing any more work, with a new fixed price you can accept or decline.</p></details>
-    <details><summary>How do I pay?</summary><p>By card or PayPal through an invoice I send after the fix. You can pay in US dollars, pounds or euros.</p></details>
-    <details><summary>You're in Kenya and I'm in the US / UK. Does that work?</summary><p>Yes. Everything is done online, and most fixes don't need a call. I work late afternoons and evenings Nairobi time so I overlap with US business hours, and UK and Irish mornings.</p></details>
-    <details><summary>Which platforms do you work with?</summary><p>WordPress, Wix, Squarespace, Shopify, GoDaddy and Hostinger builders, plain HTML sites, and custom sites built with React, Next.js, Node.js or PHP.</p></details>
-    <details><summary>Can you keep an eye on it after?</summary><p>Yes, with optional monthly care: updates, backups, and alerts if your site goes down or your certificate is about to expire. Cancel any time.</p></details>
-  </div>
-</section>
-
-<section id="contact">
-  <div class="wrap">
-    <div class="contact">
-      <div>
-        <h2>Get a free check</h2>
-        <p>Send your web address, or your business name as it appears on Google Maps. I'll reply within a working day with what's wrong and a fixed price.</p>
-      </div>
-      <div class="btns">
-        <a class="btn primary" href="mailto:mugo.ndung@gmail.com?subject=Free%20website%20check&amp;body=Business%20name%3A%0AWebsite%3A%0AWhat%27s%20wrong%20(if%20you%20know)%3A">Email me</a>
-        <a class="btn ghost" href="https://wa.me/254727774858?text=Hi%20Alex%2C%20I%27d%20like%20a%20free%20website%20check%20for%3A%20" rel="noopener">WhatsApp</a>
-      </div>
+    <div class="faq" style="margin-top:32px">
+      <div><h3>Do you need my password?</h3><p>No. Wix, Squarespace, WordPress, Shopify, Google Business Profile and domain registrars all let you add me as a user. Remove me when we're done.</p></div>
+      <div><h3>What if you can't fix it?</h3><p>Then you don't pay. If it turns out bigger than we agreed, I'll tell you first, with a new price you can accept or decline.</p></div>
+      <div><h3>You're in Kenya. Does that work?</h3><p>Yes. Everything is done online and most fixes don't need a call. My hours overlap with yours.</p></div>
+      <div><h3>Which platforms?</h3><p>WordPress, Wix, Squarespace, Shopify, GoDaddy and Hostinger builders, plain HTML, and custom sites in React, Next.js, Node.js or PHP.</p></div>
     </div>
   </div>
 </section>
 
 <div class="wrap">
   <footer>
-    <span>Fix My Site · Alex Mugo Ndungu · Nairobi, Kenya</span>
+    <span>Alex Mugo Ndungu, website repairs for small businesses</span>
     <span><a href="mailto:mugo.ndung@gmail.com">mugo.ndung@gmail.com</a></span>
   </footer>
 </div>
+
+<script>
+  (function () {
+    var form = document.getElementById('quote-form');
+    var err = document.getElementById('q-error');
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var v = function (id) { return document.getElementById(id).value.trim(); };
+      var issues = Array.prototype.slice.call(form.querySelectorAll('input[name=issue]:checked')).map(function (c) { return c.value; });
+      if (!v('q-site') && !v('q-biz')) { err.textContent = 'Please add your website address or business name.'; document.getElementById('q-site').focus(); return; }
+      if (!v('q-desc') && issues.length === 0) { err.textContent = 'Please tick a problem or describe it.'; document.getElementById('q-desc').focus(); return; }
+      err.textContent = '';
+      var lines = [
+        'Name: ' + v('q-name'),
+        'Business: ' + v('q-biz'),
+        'Website: ' + v('q-site'),
+        '',
+        'Problems: ' + (issues.length ? issues.join('; ') : 'not ticked'),
+        '',
+        'Details:',
+        v('q-desc')
+      ];
+      var subject = 'Website quote request' + (v('q-biz') ? ': ' + v('q-biz') : '');
+      window.location.href = 'mailto:mugo.ndung@gmail.com?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(lines.join('\n'));
+    });
+  })();
+</script>
 </body>
 </html>
