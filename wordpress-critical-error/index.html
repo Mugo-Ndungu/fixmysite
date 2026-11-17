@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
+<title>WordPress &quot;There has been a critical error on this website&quot;: how to fix it</title>
+<meta name="description" content="Your WordPress site shows &quot;There has been a critical error on this website&quot;? Use the recovery email, find the plugin or theme at fault, and get the site back. Step by step.">
+<link rel="canonical" href="https://mugo-ndungu.github.io/fixmysite/wordpress-critical-error/">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<meta property="og:title" content="WordPress &quot;There has been a critical error on this website&quot;: how to fix it">
+<meta property="og:description" content="Your WordPress site shows &quot;There has been a critical error on this website&quot;? Use the recovery email, find the plugin or theme at fault, and get the site back. Step by step.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://mugo-ndungu.github.io/fixmysite/wordpress-critical-error/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../style.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "WordPress \"There has been a critical error on this website\": how to fix it",
+      "description": "Your WordPress site shows \"There has been a critical error on this website\"? Use the recovery email, find the plugin or theme at fault, and get the site back. Step by step.",
+      "url": "https://mugo-ndungu.github.io/fixmysite/wordpress-critical-error/",
+      "datePublished": "2026-11-17",
+      "dateModified": "2026-11-17",
+      "author": {
+        "@type": "Person",
+        "name": "Alex Mugo Ndungu",
+        "url": "https://mugo-ndungu.github.io/fixmysite/"
+      },
+      "publisher": {
+        "@type": "Person",
+        "name": "Alex Mugo Ndungu"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Website repair",
+          "item": "https://mugo-ndungu.github.io/fixmysite/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "WordPress says \"There has been a critical error on this website\"?",
+          "item": "https://mugo-ndungu.github.io/fixmysite/wordpress-critical-error/"
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <a class="name" href="../"><b>Alex Mugo</b><span>website repairs</span></a>
+    <nav>
+      <a class="hide-sm" href="../#prices">Prices</a>
+      <a class="hide-sm" href="../#guides">Guides</a>
+      <a class="btn solid" href="../#check">Get a free check</a>
+    </nav>
+  </header>
+  <main class="article">
+    <a class="crumb" href="../#guides">Guides</a>
+    <h1>WordPress says &quot;There has been a critical error on this website&quot;?</h1>
+    <p class="answer">This message means a plugin, theme or code change crashed WordPress. WordPress usually emails the site&#x27;s admin address a link to log in using recovery mode, where you can switch off whatever caused it.</p>
+
+<h2>1. Look for the recovery email</h2>
+<p>Check the inbox of the site's admin email for a message titled "Your Site is Experiencing a Technical Issue". It names the plugin or theme at fault and includes a recovery mode link. Use the link to log in, then deactivate that plugin or switch theme.</p>
+
+<h2>2. No email? Switch off the plugins</h2>
+<p>Open your host's File Manager or connect by FTP. Rename the folder <code>wp-content/plugins</code> to <code>plugins-off</code>. If the site comes back, rename it back and switch plugins on one at a time in the dashboard until the error returns. That's your culprit.</p>
+
+<h2>3. Check the theme</h2>
+<p>If switching off plugins didn't help, rename your active theme's folder inside <code>wp-content/themes</code>. WordPress falls back to a default theme (such as Twenty Twenty-Four) if one is installed.</p>
+
+<h2>4. Turn on the error log</h2>
+<p>In <code>wp-config.php</code>, set <code>WP_DEBUG</code> and <code>WP_DEBUG_LOG</code> to <code>true</code>. Reload the site, then read <code>wp-content/debug.log</code>: the last lines name the file that failed. Turn debugging off again when you're done.</p>
+
+<h2>5. Check the PHP version</h2>
+<p>If the error started when your host upgraded PHP, an old plugin or theme may not support the new version. Switch back temporarily in your hosting panel, then update or replace the plugin.</p>
+
+    <div class="cta">
+      <h2>Rather I just fix it?</h2>
+      <p>I find the failing plugin, theme or code, bring the site back with a backup taken first, and update or replace what broke. Fixed price $150-350, agreed first, and you pay when it works.</p>
+      <a class="btn solid" href="../#check">Get a free check</a>
+    </div>
+    <div class="related"><b>Other guides</b>
+      <a href="../locked-out-of-wordpress-admin/">Locked out of your WordPress admin?</a>
+      <a href="../website-slow-to-load/">Website slow to load?</a>
+      <a href="../website-not-mobile-friendly/">Website doesn&#x27;t work properly on phones?</a>
+      <a href="../domain-not-pointing-to-new-website/">Moved to a new website but your domain still shows the old one (or nothing)?</a>
+      <a href="../website-not-showing-on-google/">Website not showing on Google?</a>
+      <a href="../website-not-secure-warning/">Browser says your website is &quot;Not secure&quot;?</a>
+      <a href="../#guides">All guides</a>
+    </div>
+  </main>
+  <footer>
+    <span>Alex Mugo Ndungu, website repairs for small businesses</span>
+    <span><a href="mailto:mugo.ndung@gmail.com">mugo.ndung@gmail.com</a></span>
+  </footer>
+</div>
+</body>
+</html>
