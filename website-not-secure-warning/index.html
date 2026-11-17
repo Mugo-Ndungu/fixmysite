@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
+<title>Website says &quot;Not secure&quot;? How to fix an SSL certificate warning</title>
+<meta name="description" content="Visitors see &quot;Not secure&quot; or &quot;Your connection is not private&quot; on your business website? It&#x27;s the SSL certificate. Here&#x27;s how to find the cause and fix it.">
+<link rel="canonical" href="https://mugo-ndungu.github.io/fixmysite/website-not-secure-warning/">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<meta property="og:title" content="Website says &quot;Not secure&quot;? How to fix an SSL certificate warning">
+<meta property="og:description" content="Visitors see &quot;Not secure&quot; or &quot;Your connection is not private&quot; on your business website? It&#x27;s the SSL certificate. Here&#x27;s how to find the cause and fix it.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://mugo-ndungu.github.io/fixmysite/website-not-secure-warning/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../style.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "Website says \"Not secure\"? How to fix an SSL certificate warning",
+      "description": "Visitors see \"Not secure\" or \"Your connection is not private\" on your business website? It's the SSL certificate. Here's how to find the cause and fix it.",
+      "url": "https://mugo-ndungu.github.io/fixmysite/website-not-secure-warning/",
+      "datePublished": "2026-11-17",
+      "dateModified": "2026-11-17",
+      "author": {
+        "@type": "Person",
+        "name": "Alex Mugo Ndungu",
+        "url": "https://mugo-ndungu.github.io/fixmysite/"
+      },
+      "publisher": {
+        "@type": "Person",
+        "name": "Alex Mugo Ndungu"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Website repair",
+          "item": "https://mugo-ndungu.github.io/fixmysite/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Browser says your website is \"Not secure\"?",
+          "item": "https://mugo-ndungu.github.io/fixmysite/website-not-secure-warning/"
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <a class="name" href="../"><b>Alex Mugo</b><span>website repairs</span></a>
+    <nav>
+      <a class="hide-sm" href="../#prices">Prices</a>
+      <a class="hide-sm" href="../#guides">Guides</a>
+      <a class="btn solid" href="../#check">Get a free check</a>
+    </nav>
+  </header>
+  <main class="article">
+    <a class="crumb" href="../#guides">Guides</a>
+    <h1>Browser says your website is &quot;Not secure&quot;?</h1>
+    <p class="answer">The warning appears when your site&#x27;s SSL certificate is missing, has expired, or was issued for a different address (for example www but not the plain domain). Most hosts give you a free certificate that renews itself. It just has to be issued correctly and cover every version of your address.</p>
+
+<h2>1. Find out which problem you have</h2>
+<p>In Chrome, click the warning next to your address, then the certificate details. Look at two things: the <b>valid until</b> date, and the name it was <b>issued to</b>. An old date means it expired. A different name means it belongs to another address, often your hosting company's server.</p>
+
+<h2>2. If it expired</h2>
+<ul>
+  <li><b>cPanel hosting</b> (common with many US hosts): open <b>SSL/TLS Status</b> and click <b>Run AutoSSL</b>.</li>
+  <li><b>Other hosts:</b> look for "SSL" in your control panel. Most offer a free Let's Encrypt certificate that renews automatically.</li>
+  <li>If a certificate was installed by hand years ago, it won't renew on its own. Replace it with an automatic one.</li>
+</ul>
+
+<h2>3. If it's for the wrong address</h2>
+<p>Make sure the certificate covers both <code>yourbusiness.com</code> and <code>www.yourbusiness.com</code>, or redirect one to the other. This is the most common cause of a warning that only some visitors see.</p>
+
+<h2>4. Wix, Squarespace and Shopify</h2>
+<p>These builders issue the certificate for you once your domain is connected properly. A warning on one of them usually means the domain's DNS settings point somewhere else.</p>
+
+<h2>5. Send everyone to the secure address</h2>
+<p>Turn on "Force HTTPS" (or redirect http to https) so nobody lands on the insecure version. If the padlock still shows a warning with a valid certificate, some images or scripts are loading over plain http. They need updating to https.</p>
+
+    <div class="cta">
+      <h2>Rather I just fix it?</h2>
+      <p>I install a free certificate that renews itself, cover every version of your address, and send all visitors to the secure one. Fixed price $100-200, agreed first, and you pay when it works.</p>
+      <a class="btn solid" href="../#check">Get a free check</a>
+    </div>
+    <div class="related"><b>Other guides</b>
+      <a href="../website-not-showing-on-google/">Website not showing on Google?</a>
+      <a href="../wix-domain-not-connected/">Wix says &quot;This domain isn&#x27;t connected to a site&quot;?</a>
+      <a href="../squarespace-website-expired/">Squarespace says &quot;Website Expired&quot;?</a>
+      <a href="../google-maps-wrong-website-link/">Google Maps shows the wrong website for your business?</a>
+    </div>
+  </main>
+  <footer>
+    <span>Alex Mugo Ndungu, website repairs for small businesses</span>
+    <span><a href="mailto:mugo.ndung@gmail.com">mugo.ndung@gmail.com</a></span>
+  </footer>
+</div>
+</body>
+</html>
