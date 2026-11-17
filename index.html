@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
 <title>Alex Mugo, website repairs for small businesses</title>
 <meta name="description" content="Website down, hidden from Google, showing a security warning or linked wrong on Google Maps? Fixed-price repairs for small businesses. Free check, pay when it works.">
 <meta property="og:title" content="Alex Mugo, website repairs for small businesses">
@@ -18,12 +19,6 @@
     --accent: #d9431c; --accent-ink: #ffffff; --tint: #e7e9e4;
     --r: 3px;
     --mono: "IBM Plex Mono", ui-monospace, Menlo, monospace;
-  }
-  @media (prefers-color-scheme: dark) {
-    :root {
-      --bg: #141517; --paper: #1b1c1f; --ink: #ecedea; --muted: #a1a4aa; --line: #2c2e33;
-      --accent: #ff6b3f; --accent-ink: #141517; --tint: #1f2124;
-    }
   }
   * { box-sizing: border-box; }
   html { scroll-behavior: smooth; }
@@ -68,12 +63,13 @@
   .intro { color: var(--muted); max-width: 36em; margin: 0 0 40px; }
 
   /* screens */
-  .screens { display: grid; grid-template-columns: 1.6fr 1fr; gap: 28px; align-items: start; }
-  .screens .tall { grid-row: span 2; }
-  @media (max-width: 800px) { .screens { grid-template-columns: 1fr; } .screens .tall { grid-row: auto; } }
-  .screens .note { background: var(--tint); border-radius: var(--r); padding: 24px; }
-  .screens .note p { margin: 0 0 10px; }
-  .screens .note p:last-child { margin: 0; }
+  .screens { display: grid; grid-template-columns: 1.04fr 1fr; gap: 28px; align-items: start; }
+  @media (max-width: 800px) { .screens { grid-template-columns: 1fr; } }
+  .note { margin-top: 32px; background: var(--tint); border-radius: var(--r); padding: 22px 26px; display: grid; grid-template-columns: auto 1fr 1fr 1fr; gap: 10px 32px; align-items: start; }
+  @media (max-width: 800px) { .note { grid-template-columns: 1fr; } }
+  .note b { font-stretch: 85%; font-size: 18px; }
+  .note p { margin: 0; font-size: 15.5px; color: var(--muted); }
+  .note p strong { color: var(--ink); font-weight: 600; display: block; }
 
   /* price board */
   .board { background: var(--paper); border: 1px solid var(--line); border-radius: var(--r); padding: 36px 40px; display: grid; grid-template-columns: 1fr 1fr; column-gap: 56px; }
@@ -102,7 +98,6 @@
   label, legend { font-weight: 600; font-size: 15px; }
   .help { font-size: 13.5px; color: var(--muted); }
   input[type=text], input[type=url], textarea { width: 100%; font: inherit; font-size: 16px; color: var(--ink); background: var(--bg); border: 1px solid #b9bcb6; border-radius: var(--r); padding: 11px 12px; }
-  @media (prefers-color-scheme: dark) { input[type=text], input[type=url], textarea { border-color: #44474d; } }
   input:focus, textarea:focus { outline: 2px solid var(--accent); outline-offset: 1px; }
   textarea { min-height: 120px; resize: vertical; }
   fieldset { border: 0; padding: 0; margin: 0; }
@@ -110,24 +105,24 @@
   @media (max-width: 640px) { .checks { grid-template-columns: 1fr; } }
   .checks label { font-weight: 400; display: flex; gap: 10px; align-items: flex-start; font-size: 15.5px; }
   .checks input { accent-color: var(--accent); width: 17px; height: 17px; margin-top: 4px; flex: none; }
-  .error { color: var(--accent); font-size: 14px; min-height: 1em; }
+  .error { color: var(--accent); font-size: 14px; }
+  .error:empty { display: none; }
+  .quote-side { display: flex; flex-direction: column; gap: 30px; }
+  .steps { border-top: 2px solid var(--ink); }
+  .steps div { padding: 16px 0; border-bottom: 1px solid var(--line); }
+  .steps h3 { margin: 0 0 4px; font-size: 18px; font-stretch: 90%; font-weight: 700; }
+  .steps p { margin: 0; color: var(--muted); font-size: 15.5px; }
   .form-foot { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
   .form-foot .help a { color: var(--ink); }
 
-  /* how */
-  .how { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 2px solid var(--ink); }
-  @media (max-width: 800px) { .how { grid-template-columns: 1fr; } }
-  .how div { padding: 22px 28px 0 0; }
-  @media (max-width: 800px) { .how div { padding: 18px 0; border-bottom: 1px solid var(--line); } }
-  .how h3 { margin: 0 0 6px; font-size: 20px; font-stretch: 90%; font-weight: 700; }
-  .how p { margin: 0; color: var(--muted); }
-
   /* about */
-  .about { display: grid; grid-template-columns: 1.4fr 1fr; gap: 56px; align-items: start; }
-  @media (max-width: 900px) { .about { grid-template-columns: 1fr; gap: 28px; } }
-  .about p { margin: 0 0 16px; max-width: 34em; }
+  .about { display: grid; grid-template-columns: 1fr 1fr; gap: 16px 56px; align-items: start; }
+  @media (max-width: 900px) { .about { grid-template-columns: 1fr; } }
+  .about h2 { grid-column: 1 / -1; }
+  .about p { margin: 0 0 16px; }
   .sig { font-weight: 700; font-stretch: 85%; font-size: 22px; }
-  .stats { display: grid; gap: 22px; }
+  .stats { grid-column: 1 / -1; display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; border-top: 2px solid var(--ink); padding-top: 22px; margin-top: 12px; }
+  @media (max-width: 700px) { .stats { grid-template-columns: 1fr; } }
   .stats div b { display: block; font-family: var(--mono); font-weight: 500; font-size: 26px; }
   .stats div span { color: var(--muted); font-size: 15px; }
 
@@ -174,7 +169,7 @@
     <h2>Seen one of these on your own site?</h2>
     <p class="intro">Owners rarely find out. Customers don't complain, they just book somewhere else. All three of these were live on small business websites in November 2026.</p>
     <div class="screens">
-      <figure class="tall">
+      <figure>
         <div class="shot"><img src="img/hosting-default-page.jpg" width="1100" height="516" alt="A hosting company's default page saying there is no website at this address" loading="lazy"></div>
         <figcaption>A gift shop's address showing the hosting company's placeholder.</figcaption>
       </figure>
@@ -182,10 +177,12 @@
         <div class="shot"><img src="img/website-expired.jpg" width="760" height="370" alt="A Squarespace page saying Website Expired" loading="lazy"></div>
         <figcaption>An auto repair shop after its subscription lapsed.</figcaption>
       </figure>
-      <div class="note">
-        <p><b>Also common, and invisible to you:</b></p>
-        <p>A setting that tells Google not to list the site. An expired security certificate. A Google Maps "Website" button that sends people to a stranger's page.</p>
-      </div>
+    </div>
+    <div class="note">
+      <b>Also common, and invisible to you:</b>
+      <p><strong>Hidden from Google</strong>A setting left on that tells Google not to list the site.</p>
+      <p><strong>"Not secure"</strong>An expired certificate puts a warning in front of every visitor.</p>
+      <p><strong>Wrong Maps link</strong>The "Website" button sends customers to a stranger's page.</p>
     </div>
   </div>
 </section>
@@ -211,12 +208,19 @@
 
 <section id="check">
   <div class="wrap quote">
-    <div>
-      <h2>Tell me what's wrong</h2>
-      <p class="intro" style="margin-bottom:0">Describe the problem in your own words. I'll look at your site and reply within one working day with what's wrong and a fixed price. If it's a two-minute job, I'll just tell you how to do it.</p>
+    <div class="quote-side">
+      <div>
+        <h2>Tell me what's wrong</h2>
+        <p class="intro" style="margin-bottom:0">Describe the problem in your own words. I'll reply within one working day with the cause and a fixed price. If it's a two-minute job, I'll just tell you how to do it.</p>
+      </div>
       <div class="discount">
         <b>More than one problem? It costs less.</b>
         <span>Two fixes: 10% off the prices above. Three or more: 15% off.</span>
+      </div>
+      <div class="steps" id="how">
+        <div><h3>You tell me</h3><p>Use this form, email or WhatsApp. No contract.</p></div>
+        <div><h3>I fix it</h3><p>You add me as a user on your site or domain account, so I never need your password. You get before and after screenshots.</p></div>
+        <div><h3>You pay</h3><p>Once you've seen it working, by card or PayPal. Jobs over $300 are half up front.</p></div>
       </div>
     </div>
     <form id="quote-form" novalidate>
@@ -255,25 +259,15 @@
   </div>
 </section>
 
-<section id="how">
-  <div class="wrap">
-    <h2>How it works</h2>
-    <p class="intro">No contract and nothing to pay up front for small jobs.</p>
-    <div class="how">
-      <div><h3>You tell me</h3><p>Send your web address and what's wrong. I reply within a working day with the cause and a fixed price.</p></div>
-      <div><h3>I fix it</h3><p>You add me as a user on your site or domain account, so I never need your password. I fix it and send before and after screenshots.</p></div>
-      <div><h3>You pay</h3><p>Once you've seen it working, by card or PayPal. Jobs over $300 are half up front, half on completion.</p></div>
-    </div>
-  </div>
-</section>
-
 <section id="about">
   <div class="wrap about">
+    <h2>Hi, I'm Alex</h2>
     <div>
-      <h2>Hi, I'm Alex</h2>
       <p>I'm a web developer in Nairobi, Kenya, and I've been building software that businesses rely on since 2016. I studied Computer Science at the University of Nairobi and graduated with First Class Honours.</p>
-      <p>Most of my work is bigger systems: an operations platform called Ikweta that replaced a company's spreadsheets, billing systems, and WhatsApp and SMS notifications. Fixing small business websites is the part where a few hours of my time makes the biggest difference to someone.</p>
-      <p>I work late afternoons and evenings my time, which is your morning in the UK and Ireland and your working day in the US.</p>
+      <p>Most of my work is bigger systems: an operations platform called Ikweta that replaced a company's spreadsheets, billing systems, and WhatsApp and SMS notifications.</p>
+    </div>
+    <div>
+      <p>Fixing small business websites is the part where a few hours of my time makes the biggest difference to someone. I work late afternoons and evenings my time, which is your morning in the UK and Ireland and your working day in the US.</p>
       <p class="sig">Alex Mugo Ndungu</p>
       <p><a href="https://www.linkedin.com/in/alexmugo-dev" rel="noopener">LinkedIn</a> &nbsp; <a href="https://github.com/Mugo-Ndungu" rel="noopener">GitHub</a></p>
     </div>
